@@ -1,0 +1,33 @@
+{
+  "skill_name": "system-analyzer",
+  "evals": [
+    {
+      "id": 1,
+      "eval_name": "full-nest-audit",
+      "prompt": "Run a comprehensive audit of the nest server. Analyze Docker containers (caddy, vaultwarden, portainer, grafana, prometheus, ac-panel, etc.), systemd services, cron jobs, storage usage, and performance. Provide specific, actionable recommendations for optimization. Focus on: (1) What could fail and cause downtime? (2) What's wasting resources? (3) What could be automated?",
+      "expected_output": "Structured report with critical issues, warnings, and optimizations. Each recommendation should be specific (e.g., 'add restart_policy to caddy' not 'improve configuration')",
+      "files": []
+    },
+    {
+      "id": 2,
+      "eval_name": "docker-specific-deep-dive",
+      "prompt": "Deep analysis of Docker infrastructure on nest. List all containers, check networking (caddy_net, vaultwarden_default), resource allocation (CPU/memory limits), restart policies, image freshness, mount points. Identify: (1) Containers that could fail silently, (2) Resource inefficiencies, (3) Networking improvements, (4) Consolidation opportunities.",
+      "expected_output": "Detailed Docker-focused report with container-by-container analysis. Include resource recommendations, networking improvements, and specific docker-compose.yml changes.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "eval_name": "cron-and-automation-gaps",
+      "prompt": "Analyze cron jobs and systemd timers on nest (both root and hushus user). Identify: (1) Cron jobs that overlap or could consolidate, (2) Tasks that could be automated that aren't, (3) Cron jobs that should have better logging or error handling, (4) Opportunities to move from cron to systemd timers or event-driven automation. Include specific suggestions for improvement.",
+      "expected_output": "Report listing all cron jobs found, analysis of frequency/dependencies, and specific recommendations for consolidation or migration to systemd.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "eval_name": "storage-and-disk-health",
+      "prompt": "Analyze storage on nest: disk usage by partition, large files and directories, Docker image disk usage, log files, orphaned containers/volumes. Identify: (1) Partitions approaching capacity, (2) Cleanup opportunities, (3) Growth trends and predictions, (4) Backup/archive strategies. Be specific about what could be cleaned and how much space would be freed.",
+      "expected_output": "Storage analysis report with specific directories consuming space, cleanable items with space estimates, and storage management recommendations.",
+      "files": []
+    }
+  ]
+}
