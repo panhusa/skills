@@ -1,7 +1,9 @@
 ---
 name: laptop-ubuntu-kanciapa
-description: Use when managing HP EliteBook 840 G5 (Ubuntu, 192.168.1.70) — SSH access, launching GUI apps remotely, REAPER DAW, MCP reaper-mcp-server, audio stack (JACK/FFADO/PipeWire), kanciapa project setup
+description: STALE since 2026-09-19 — this laptop was reinstalled to Windows 11 (now called bunkier), Ubuntu/REAPER no longer installed. Kept only for historical reference to the old Ubuntu setup (HP EliteBook 840 G5, 192.168.1.70) — SSH access, REAPER DAW, MCP reaper-mcp-server, JACK/FFADO/PipeWire audio stack. Do not use for current kanciapa/bunkier work — see the `kanciapa` skill instead.
 ---
+
+> **STALE (2026-09-19):** this laptop was reinstalled with Windows 11, hostname now `bunkier`, IP 10.0.0.3 (VPN-only, see [[project_bunkier]]). Everything below is Ubuntu-specific and does not apply to the current OS. Kept as reference in case Ubuntu-era detail is needed again — not rebuilt for Windows yet. Whether REAPER/audio comes back on this machine is still open, pending on-device check.
 
 # Laptop Ubuntu — kanciapa
 
