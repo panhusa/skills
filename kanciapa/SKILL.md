@@ -29,7 +29,7 @@ sometimes their own hardware:
 | `kanciapa/` (root) | The physical room: audio routing, REAPER, MX5, live rig, recording | `PROJECT.md`, `kanciapa-notes.md`, `SETUP.md`, `kanciapa-todo.md`, `plans/*.md` |
 | `kanciapa/band-iem/` | Separate app, own git repo — personal IEM mixing for musicians' phones. Different audience/hardware than the room's recording setup: UR44 + Fast Track Ultra via VB-Audio Matrix, hosted on `bunkier` | `band-iem/PROJECT.md` |
 | `kanciapa/acoustics/` | Room measurement (REW) and treatment placement — separate concern, ties into band-iem's future Control Room EQ but not started | `acoustics/PROJECT.md` |
-| Wireless guitar / Aria / beltpack | Aria guitar hardware project — ESP32 MIDI + wireless audio, its own thing | `wireless-guitar-plan.md`, `guitar-passive-wiring.md`, `beltpack-design.md` |
+| Wireless guitar / Aria / beltpack | Aria guitar hardware project — TriplePlay Express MIDI pickup + RPi4/Zynthian synth pedalboard + (parked) wireless MIDI. **Lives outside kanciapa/**, at `~/projects/music/aria-guitar/README.md` — that's the authoritative doc, more current than kanciapa's own `wireless-guitar-plan.md`/`beltpack-design.md`/`guitar-passive-wiring.md` copies. | `~/projects/music/aria-guitar/README.md` (authoritative), `wireless-guitar-plan.md`, `guitar-passive-wiring.md`, `beltpack-design.md`, `kanciapa/zynthian/` (the Zynthian/Pi build's own sub-project) |
 
 Before assuming a decision in one subsystem applies to another (e.g. "the
 interface" or "the laptop"), check which subsystem's docs actually describe
@@ -54,6 +54,12 @@ claim as worth a quick sanity check if the task depends on it being right.
 `~/.claude/skills/laptop-ubuntu-kanciapa/` already documents this — it has
 its own STALE banner (2026-09-19) and is kept for Ubuntu-era reference only,
 not current instructions.
+
+## Before starting a new sub-project
+
+**Check `~/projects/PROJECTS.md` and grep for related terms across `~/projects/` before brainstorming something as if it's new.** A Zynthian design got brainstormed from scratch here 2026-09-21 without checking first — `~/projects/music/aria-guitar/README.md` already had a more complete, more recently-decided version of the same plan (MPE requirement, resolved audio routing, explicit sequencing), written the day before. The two designs had to be reconciled after the fact instead of starting from the real state.
+
+This isn't unique to kanciapa — any project here can have a sibling doc elsewhere in `~/projects/` that already covers what looks like a fresh idea, especially for hardware/hobby projects that touch multiple areas (a guitar mod touches both `music/aria-guitar/` and `music/kanciapa/`, for instance). Before writing a new design doc for anything that sounds like it could already be someone's plan, check `PROJECTS.md`'s index and grep the project tree for the key nouns first.
 
 ## Related skills — use these instead of re-deriving their scope here
 
