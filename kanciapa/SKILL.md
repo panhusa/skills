@@ -19,6 +19,12 @@ authoritative living docs. Read both in full before acting on anything else
 in this project, even if the task seems narrow (grepping for a keyword and
 acting on one match is exactly how staleness gets missed).
 
+**`EQUIPMENT.md`** — consolidated hardware inventory across all subsystems
+below (recording, guitar rig, drums, monitoring, acoustics). A quick-reference
+snapshot, not authoritative for any single decision — cross-check against the
+relevant subsystem's own doc if something looks off, but check this first
+before asking "what gear does Dawid have" from scratch.
+
 ## Subsystem map
 
 Don't confuse these — they're related but distinct, with their own docs and
@@ -72,6 +78,10 @@ This isn't unique to kanciapa — any project here can have a sibling doc elsewh
   2026-09-21) — don't hand-roll a consistency check here.
 - **Planning new recording/hardware/architecture work** →
   `superpowers:brainstorming` skill, same as any other project.
+- **Acoustic panel/bass-trap placement, mic positioning, speaker/monitor
+  placement, reading a REW graph, room modes, phase/comb filtering between
+  mics** → `sound-physics` skill (physical acoustics, distinct from
+  `av-signal-chain`'s electrical-signal-chain scope).
 
 ## Known-stale patterns to watch for (not exhaustive — just what's bitten before)
 
