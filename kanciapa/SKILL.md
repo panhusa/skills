@@ -1,6 +1,6 @@
 ---
 name: kanciapa
-description: Use whenever working on the kanciapa project — Dawid's jam/recording room (~/projects/music/kanciapa/): guitar+bass+drums setup, REAPER, MX5, band-iem (personal IEM monitoring), room acoustics/treatment, or the wireless-guitar/Aria/beltpack hardware project. Also use before trusting any claim in kanciapa's docs about hardware or machine state, since this project has a real history of docs going stale and contradicting each other — even when the user doesn't explicitly ask for orientation.
+description: "Use whenever working on the kanciapa project — Dawid's jam/recording room (~/projects/music/kanciapa/): guitar+bass+drums setup, REAPER, MX5, band-iem (personal IEM monitoring), room acoustics/treatment, or the wireless-guitar/Aria/beltpack hardware project. Also use before trusting any claim in kanciapa's docs about hardware or machine state, since this project has a real history of docs going stale and contradicting each other — even when the user doesn't explicitly ask for orientation."
 ---
 
 # kanciapa — orientation

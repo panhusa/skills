@@ -1,6 +1,6 @@
 ---
 name: av-signal-chain
-description: Help with audio (and AV) signal-chain engineering — pedalboards, patchbays, FX loops, DI boxes, gain staging, buffered vs true-bypass, and hum/buzz/ground-loop diagnosis. Use this whenever Dawid is wiring, debugging noise on, or planning any part of the kanciapa signal chain (guitar/bass/amp/MX5/pedals/interfaces) or a similar personal AV setup — even if he doesn't say "signal chain" explicitly, e.g. "why does my amp buzz", "how do I build a pedalboard", "should I add a buffer", "how do I wire a patchbay", "what DI should I get", "is this cable run OK". Goal: consistent, professional-sounding signal every time, not a one-off fix.
+description: "Help with audio (and AV) signal-chain engineering — pedalboards, patchbays, FX loops, DI boxes, gain staging, buffered vs true-bypass, and hum/buzz/ground-loop diagnosis. Use this whenever Dawid is wiring, debugging noise on, or planning any part of the kanciapa signal chain (guitar/bass/amp/MX5/pedals/interfaces) or a similar personal AV setup — even if he doesn't say \"signal chain\" explicitly, e.g. \"why does my amp buzz\", \"how do I build a pedalboard\", \"should I add a buffer\", \"how do I wire a patchbay\", \"what DI should I get\", \"is this cable run OK\". Goal: consistent, professional-sounding signal every time, not a one-off fix."
 ---
 
 # AV signal-chain engineering
