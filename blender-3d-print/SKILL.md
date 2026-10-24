@@ -3,6 +3,8 @@ name: blender-3d-print
 description: Modelowanie obudów do druku 3D w Blender — dobre praktyki, boolean workflow, bevel, eksport STL, troubleshooting geometrii. Używaj gdy użytkownik modeluje obudowę, tworzy otwory booleanem, ma problemy z geometrią (non-manifold, za duże pliki STL, błąd slicera), eksportuje do druku 3D lub pyta o rozdzielczość cylindrów/sfer w Blender.
 ---
 
+> Target: Blender 5.2 (updated 2026-10-22). Menu paths and modifier/export option names below were written for older versions and are NOT yet re-verified against 5.2 - confirm in the UI before relying on them.
+
 ## Rozdzielczość siatek — kluczowe dla druku 3D
 
 Za duża rozdzielczość × wiele Boolean = eksplozja faces (1M+) → slicer nie wczyta pliku.

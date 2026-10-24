@@ -5,77 +5,60 @@ description: Save behavioral feedback to persistent memory so Claude remembers h
 
 ## What this skill does
 
-Writes a structured feedback file to `~/.claude/projects/-home-hushus/memory/feedback/` and updates the MEMORY.md index. The goal is that the next Claude session picks up this rule immediately, without the user having to repeat themselves.
+Adds a rule to one of the themed feedback files in `~/.claude/projects/-home-hushus/memory/feedback/` (or a tool fact to `reference/tool_gotchas.md`). The goal is that the next Claude session picks up the rule immediately, without the user repeating it, and that the feedback folder stays small (one file per theme, not one file per rule; consolidated 2026-10-07).
 
 ## Step 1 — Extract the rule
 
 From the conversation, identify:
 - **The rule**: what Claude should or shouldn't do
-- **Why it matters**: what went wrong or what the user values
+- **Why it matters**: what went wrong or what the user values (include the date)
 - **When it applies**: the context
 
 If any of these is genuinely unclear, ask one short question. Most of the time you can infer enough from context.
 
-## Step 2 — Check for an existing file
+## Step 2 — Pick the themed file
 
-```bash
-ls ~/.claude/projects/-home-hushus/memory/feedback/
-```
+| Rule is about | File |
+|---|---|
+| asking vs acting, confirmation, data safety, credentials, deletions, autonomy grants, cleanup | `feedback/rules_action_and_safety.md` |
+| tone, answer format, language, token use, understanding the ask, self-checking | `feedback/rules_communication_and_style.md` |
+| keeping docs current, evidence vs documentation, research habits, checking existing state | `feedback/rules_docs_and_truth.md` |
+| git and branches, backlog and session scripts, writing in chapters, subagents, secrets and keys, work vs personal | `feedback/rules_git_and_workflow.md` |
+| band-iem, bunkier, VB-Matrix, live rig, stable and dev trees | `feedback/rules_band_iem.md` |
+| buying hardware, MVP, physical-task planning | `feedback/rules_hardware_and_physical.md` |
+| a fact about a tool or system (how to launch, an API call, a dead end), not about how Claude behaves | `reference/tool_gotchas.md` |
 
-If a file already covers this topic, update it instead of creating a duplicate. A focused updated file is better than two overlapping ones.
+Read the target file first (`grep -n '^## ' <file>`) and check the rule is not already there; if it is, sharpen the existing bullet instead of adding a second one.
 
-## Step 3 — Write or update the file
+## Step 3 — Append to the file
 
-Filename: `feedback_<topic>.md` — lowercase, underscores, descriptive.
+Add the rule as a bullet (or extend an existing bullet) under the fitting `##` section, in this shape:
 
-Use this exact frontmatter format (matches existing files):
+`- **<short rule name>** (<YYYY-MM-DD>): <the rule in 1-2 sentences>. Why: <what happened or what the user values>.`
 
-```markdown
----
-name: feedback-<topic>
-description: "<one sentence — specific enough to decide relevance in future sessions>"
-metadata:
-  node_type: memory
-  type: feedback
----
+Keep it to 2-4 lines. Write in English. Do not touch the frontmatter except when the file's `description` no longer fits the new content.
 
-<The rule, stated directly in 1-3 sentences.>
-
-**Why:** <The reason — what happened or what the user values.>
-
-**How to apply:** <When this kicks in and what to do.>
-```
-
-Keep the body under 10 lines. The description field is what future sessions see first — make it specific and actionable, not vague.
-
-**Example:**
+Only if NO theme fits, create `feedback/rules_<theme>.md` with this frontmatter and add one index line (Step 4):
 
 ```markdown
 ---
-name: feedback-bugfix-focus
-description: "Bug fixes: change only what's needed, no opportunistic cleanup"
+name: rules-<theme>
+description: "<one sentence listing what the file covers>"
 metadata:
-  node_type: memory
   type: feedback
 ---
-
-When asked to fix a bug, make only the minimal change needed. Do not clean up surrounding code, rename variables, or refactor while at it.
-
-**Why:** Unasked-for changes muddy the diff and introduce unrequested risk.
-
-**How to apply:** Any scoped fix = surgical change only. Note cleanup opportunities separately but don't apply them.
 ```
 
-## Step 4 — Update MEMORY.md
+Never create a one-rule file named `feedback_<topic>.md` again.
 
-Add one line under `## Feedback` in `~/.claude/projects/-home-hushus/memory/MEMORY.md`:
+## Step 4 — Index (only when a new file was created)
+
+Themed files are already in `MEMORY.md` under `## Feedback`. Add a line only for a brand-new file:
 
 ```
 - [feedback/<filename>.md](feedback/<filename>.md) — <hook under 100 chars>
 ```
 
-If you updated an existing file, update its description in MEMORY.md if the old one no longer fits.
-
 ## Step 5 — Report
 
-One sentence: what was saved or updated and where. Nothing else.
+One sentence: what was saved, in which file. Nothing else.

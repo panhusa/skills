@@ -5,7 +5,7 @@ description: Use when programming, verifying, or troubleshooting HeadRush MX5 ri
 
 # HeadRush MX5 — rig & scenes (kanciapa)
 
-Source of truth: `~/projects/music/kanciapa/kanciapa-notes.md` § "MX5 rig plan" and § "MX5 rear panel — corrected facts". This skill is a quick-reference/workflow layer on top of that file — always check it for the current state before acting, it changes as things get verified on-site.
+Source of truth: `~/projects/music/kanciapa/kanciapa-notes.md` § "MX5 rig plan" and § "MX5 rear panel facts". This skill is a quick-reference/workflow layer on top of that file — always check it for the current state before acting, it changes as things get verified on-site.
 
 ## Signal chain (context)
 
